@@ -13,6 +13,7 @@ public class FeetToInches {
 
 	}
 	
+	
 	static void toInches(int feet, double inches) {
 		double heightIn = feet * 12.0;
 		heightIn += inches;
