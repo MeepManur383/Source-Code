@@ -11,7 +11,7 @@ public class DieTester {
 		System.out.println(die.getNumDots());
 		die.roll();
 		System.out.println(die.getNumDots());
-		die.roll();
+		die.roll(); 
 		System.out.println(die.getNumDots());
 		die.roll();
 		System.out.println(die.getNumDots());

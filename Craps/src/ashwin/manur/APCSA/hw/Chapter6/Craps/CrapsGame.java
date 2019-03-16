@@ -22,7 +22,7 @@ public int processRoll(int total)
          result = 1;
       }
       else if(total == 2 || total == 3 || total == 12){
-         result = -1;
+         result = -1; 
       }
       else{
          result = 0;
