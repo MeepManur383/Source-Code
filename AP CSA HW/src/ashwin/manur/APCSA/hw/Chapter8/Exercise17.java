@@ -14,14 +14,17 @@ public class Exercise17 {
 			return null;
 		if(file.substring(0,1).equals("."))
 			return null;
-		if(file.indexOf(".") > 8)
-			return null;
 		if(file.indexOf(":") != -1 || file.indexOf("\\") != -1 || file.indexOf("?") != -1 || file.indexOf("*") != -1)
 			return null;
 		if(file.indexOf(".") != file.lastIndexOf("."))
 			return null;
 		if(file.indexOf(".") == -1)
 			file += ".TXT";
+		String temp = file.substring(0,file.indexOf("."));
+		if(temp.length() > 8)
+			return null;
+		if(file.length() - file.indexOf(".") > 4)
+			return null;
 		if(file.indexOf(".") == file.length() - 1)
 			file = file.substring(0,file.indexOf('.'));
 		return file.toUpperCase();
