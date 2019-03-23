@@ -1,5 +1,6 @@
 package ashwin.manur.APCSA.hw.Chapter8;
 import java.util.Scanner;
+
 public class Exercise7 {
 	public static void main(String[] args) {
 		Scanner kboard = new Scanner(System.in);
@@ -10,7 +11,7 @@ public class Exercise7 {
 	}
 	public static String convertName(String name) {
 		String lastName = name.substring(0, name.indexOf(','));
-		String firstName = name.substring(name.indexOf(',') + 2);
-		return firstName + " " + lastName;
+		String firstName = name.substring(name.indexOf(',') + 1);
+		return firstName.trim() + " " + lastName;
 	}
 }

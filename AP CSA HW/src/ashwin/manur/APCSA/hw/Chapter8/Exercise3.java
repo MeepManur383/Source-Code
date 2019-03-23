@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Exercise3 {
 	public static void main(String[] args) {
 		Scanner kboard = new Scanner(System.in);
-		System.out.print("Enter ur social security number: ");
+		System.out.print("Enter your social security number: ");
 		String ssNum = kboard.nextLine();
 		System.out.println(removeDashes(ssNum));
 		kboard.close();
