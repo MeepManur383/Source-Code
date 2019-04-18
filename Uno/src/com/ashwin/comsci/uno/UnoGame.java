@@ -5,6 +5,9 @@ public class UnoGame {
 	private int pNum;
 	private UnoDeck gameDeck = new UnoDeck();
 	Player[] players = new Player[pNum];
+	private Player currentPlayer;
+	private int direction;
+	private boolean gameOver;
 
 	
 
@@ -26,6 +29,23 @@ public class UnoGame {
 		}
 		System.out.println(players[0]);
 	}
+	
+	public void whoseTurn() {
+		direction = 1;
+		if(direction != -1) {
+			int i = 0;
+			while(!gameOver) {
+				currentPlayer = players[i];
+				if(i == pNum - 1) {
+					i = 0;
+				}
+				else
+					i++;
+			}
+		}
+	}
+	
+	
 		
 	
 }
