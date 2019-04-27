@@ -4,7 +4,7 @@ public class WarmWeather {
 	public static void main(String[] args) {
 	boolean warm = false;
 	
-	if(location.isNorthPole()||location.isSouthPole()){
+/*	if(location.isNorthPole()||location.isSouthPole()){
 			warm = false;
 	}
 		
@@ -49,7 +49,7 @@ public class WarmWeather {
 	else
 	{
 		warm = false;
-	}
+	}*/
 
 	}
 }
