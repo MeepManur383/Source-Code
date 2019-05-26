@@ -11,6 +11,7 @@ public class DrawShape extends JFrame{
       setBounds(100, 100, frameWidth, frameHeight);
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setVisible(true);
+      setResizable(false);
    }
    public void paint(Graphics g){
       g.setColor(Color.black);
