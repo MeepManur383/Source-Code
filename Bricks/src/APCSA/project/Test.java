@@ -11,6 +11,6 @@ public class Test {
 		return points;
 	}
 	public static void main(String[] args) {
-		System.out.println(Arrays.deepToString(findOccupiedPoints(10, 10, 15)));
+		//System.out.println(Arrays.deepToString(findOccupiedPoints(10, 10, 15)));
 	}
 }
