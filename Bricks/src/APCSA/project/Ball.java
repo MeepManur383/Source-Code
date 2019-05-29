@@ -55,7 +55,7 @@ public class Ball extends JPanel implements ActionListener{
 		String ballPt;
 		String brickPt;
 		for(int thisBrick = 0; thisBrick < bricks.size(); thisBrick++) {
-			brickPt = bricks.get(thisBrick).getOccPts();
+			//brickPt = bricks.get(thisBrick).getOccPts();
 			
 			for(int r = 0; r < occPts.length; r++) {
 				for(int c = 0; c < occPts[r].length; c++) {
