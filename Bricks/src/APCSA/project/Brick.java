@@ -1,6 +1,7 @@
 package APCSA.project;
 
 import java.awt.Color;
+import java.awt.Graphics;
 public class Brick {
 	private Color color;
 	private int strength;
@@ -17,15 +18,10 @@ public class Brick {
 		this.width = width;
 		this.height = height;
 	}
-	public String[][] getOccPts() {
-		String[][] points = new String[width][height];
-		for(int r = 0; r < width; r++) {
-			for(int c = 0; c < height; c++) {
-				points[r][c] = "" + (xPos + r) + "," + (yPos + c);
-			}
-		}
-		return points;
+	public draw(Graphics g) {
+		g.fillRect(xPos, yPos, width, height);
 	}
+
 
 	
 }
