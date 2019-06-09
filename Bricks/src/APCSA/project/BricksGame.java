@@ -33,6 +33,11 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 	private TextFunctions text = new TextFunctions(frameWidth, frameHeight, playWidth);
 	private boolean ballWaiting = false;
 	private boolean level2;
+	private EasySound beep = new EasySound("beep-23.wav");
+//	private EasySound loseLife = new EasySound("fail-trombone-02.wav");
+	private EasySound victory = new EasySound("Ta Da-SoundBible.com-1884170640.wav");
+	private EasySound bounce = new EasySound("Bounce-SoundBible.com-12678623.wav");
+
 
 	//Instantiates and draws all bricks
 	public void fillBricks() {
@@ -116,10 +121,12 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 			text.display(g, "Lives Remaining: " + lives, playWidth + 12, wallWidth + 100, Color.pink, 25);
 		} else {
 			text.displayGameOver(g);
+			//loseLife.play();
 			gameOver = true;
 		}
 		if (!gameOver && brickCount <= 0) {
 			text.displayCongrats(g, score);
+			victory.play();
 			/*
 			 * try { Thread.sleep(2000); } catch (InterruptedException ex) {
 			 * Thread.currentThread().interrupt(); } level2 = true;
@@ -140,6 +147,7 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 			if (brickSide != BrickSide.NONE) {
 				score += brick.getValue();
 				brick.hitBrick();
+				beep.play();
 				brickCount--;
 			}
 			if (brickSide == BrickSide.LEFT || brickSide == BrickSide.RIGHT) {
@@ -158,7 +166,8 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 		/*to be worked on in future
 		 * if(level2) { text.reset(myGraphics, backgroundColor); ball.stageBall();
 		 * fillBricksLevel2(); lives = 2; }
-		 */		if (gameOver()) {
+		 */		
+		if (gameOver()) {
 			ball.stageBall();
 			ballWaiting = true;
 			text.displayGameOver(myGraphics);
@@ -171,6 +180,7 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 		//If the ball gets past the paddle it is reset after a pause
 		if (ball.outOfBounds() && !gameOver) {
 			lives--;
+			//loseLife.play();
 			paddle.resetPaddle();
 			ball.stageBall();
 			ballWaiting = true;
@@ -194,7 +204,11 @@ public class BricksGame extends JFrame implements ActionListener, KeyListener {
 		}
 
 		if (paddle.hitBall(ball.getX(), ball.getY(), ball.getDiam())) {
-			ball.bounceVertical();
+			/*
+			 * if(!ballWaiting) { bounce.play(); }
+			 * 
+			 */			ball.bounceVertical();
+			
 		}
 
 		repaint();
